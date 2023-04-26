@@ -1,0 +1,209 @@
+body {
+    font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    ;
+
+}
+
+
+section {
+    
+    width:-moz-fit-content; /* Firefox */
+    width:fit-content; /* other browsers */
+}
+
+.inner {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.img {
+    background-image: url(background-img.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 10px;
+}
+section > p {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.top {
+    background-color:#FFD5EC;
+    margin: 0 150px;
+}
+
+.main  {
+    font-size: 20px;
+
+}
+.sub {
+    padding: 0 0 0 50px;
+}
+
+.prf {
+    background-color: aquamarine;
+
+}
+
+
+dl {
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+dt {
+    width: 35%;
+    padding: 20px;
+    /*background-color: #DADADA;*/
+    margin: 0 0 10px 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+dd {
+    width: 65%;
+    padding: 20px;
+    /*background-color: #F3F3F3;*/
+    margin: 0 0 10px 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.job {
+    background-color: beige;
+    margin: 0 0 0 auto;
+}
+
+.hoby {
+    background-color: bisque;
+    
+}
+
+.skill {
+    background-color: blanchedalmond;
+    margin: 0 0 0 auto;
+}
+
+footer {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.mail {
+    font-size: 20px;
+    padding: 15px;;
+}
+
+/* スマートフォン用のスタイル */
+@media screen and (max-width: 480px) {
+    body {
+      font-size: 16px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    section {
+      width: 100%;
+    }
+  
+    .inner {
+      width: 100%;
+    }
+
+    .top {
+        margin: auto;
+    }
+  
+    /* 画像をリサイズ */
+    img {
+      display: none;
+    }
+  }
+  
+  /* タブレット用のスタイル */
+  @media screen and (min-width: 481px) and (max-width: 960px) {
+    body {
+      font-size: 18px;
+    }
+  
+    h1 {
+      font-size: 32px;
+    }
+  
+    section {
+      width: 80%;
+    }
+  
+    .inner {
+      width: 80%;
+    }
+  
+    /* 画像をリサイズ */
+    img {
+        display: none;
+    }
+  }
+  
+  /* PC用のスタイル */
+  @media screen and (min-width: 961px) {
+    body {
+      font-size: 20px;
+    }
+  
+    h1 {
+      font-size: 40px;
+    }
+  
+    section {
+      width: 60%;
+    }
+  
+    .inner {
+      width: 1000px;
+    }
+  
+    /* 画像をリサイズ */
+    img {
+      max-width: 960px;
+      height: auto;
+    }
+  }
+  
+     
+  
+
+
+/*js*/
+
+  #prf,#hoby {
+    opacity: 0; /* 初期状態では要素を非表示にする */
+    transform: translateX(-100%); /* 要素を左側に移動させる */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* アニメーション効果を追加する */
+  }
+  
+  #prf.show,#hoby.show {
+    opacity: 1; /* showクラスが追加されたときに要素を表示する */
+    transform: translateX(0%); /* 要素を元の位置に移動させる */
+  }
+  
+  #job,#skill {
+    opacity: 0; /* 初期状態では要素を非表示にする */
+    transform: translateX(+100%); /* 要素を右側に移動させる */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* アニメーション効果を追加する */
+  }
+  
+  #job.show,#skill.show {
+    opacity: 1; /* showクラスが追加されたときに要素を表示する */
+    transform: translateX(0%); /* 要素を元の位置に移動させる */
+  }
